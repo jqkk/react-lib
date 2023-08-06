@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script type="text/babel">  // babel이 JSX 문법을 createElement로 변환해줌
+  <head>
+    <script
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/babel">
+      // babel이 JSX 문법을 createElement로 변환해줌
 
-    const App = () => {
-      const [count, setCount] = React.useState(0)
+      const App = () => {
+        const [count, setCount] = React.useState(0);
 
-      const handleClick = () => {
-        setCount(count + 1)
-      }
+        const handleClick = () => {
+          setCount(count + 1);
+        };
 
-      return (
-        <div className="flex justify-center items-center h-screen">
-          <div className="bg-gray-200 text-gray-700 text-2xl font-bold rounded-xl border-2 border-gray-500 p-10 cursor-pointer select-none" onClick={handleClick}>
-            Counting : {count}
+        return (
+          <div className="flex justify-center items-center h-screen">
+            <div
+              className="bg-gray-200 text-gray-700 text-2xl font-bold rounded-xl border-2 border-gray-500 p-10 cursor-pointer select-none"
+              onClick={handleClick}
+            >
+              Counting : {count}
+            </div>
           </div>
-        </div>
-      )
-    }
+        );
+      };
 
-    const Root = document.getElementById('root');
-    ReactDOM.createRoot(Root).render(<App/>)
-  </script>
-</head>
-<body>
-  <div id="root"></div>
-</body>
+      const Root = document.getElementById("root");
+      ReactDOM.createRoot(Root).render(<App />);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
