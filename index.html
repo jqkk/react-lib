@@ -8,10 +8,16 @@
   <script type="text/babel">
 
     const App = () => {
+      const [count, setCount] = React.useState(0)
+
+      const handleClick = () => {
+        setCount(count + 1)
+      }
+
       return (
         <div className="flex justify-center items-center h-screen">
-          <div className="bg-gray-200 text-gray-700 text-2xl font-bold rounded-xl border-2 border-gray-500 p-10">
-            Hello World
+          <div className="bg-gray-200 text-gray-700 text-2xl font-bold rounded-xl border-2 border-gray-500 p-10 cursor-pointer select-none" onClick={handleClick}>
+            Counting : {count}
           </div>
         </div>
       )
